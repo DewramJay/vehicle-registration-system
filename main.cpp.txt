@@ -1,0 +1,95 @@
+
+
+#include <iostream>
+#include <string>
+#include"Header.h"
+
+using namespace std;
+
+int main()
+{
+	Doubly_Linked_List dll;
+	string char_part;
+	int num_part;
+	int n = 0;
+	char a;
+	
+
+
+top:
+	cout << "\t=========================================================================" << endl;
+	cout << "\t>>> S M A R T   V E H I C L E   R E G I S T R A T I O N   S Y S T E M <<<" << endl;
+	cout << "\t=========================================================================" << endl;
+	cout << endl<< "\t\t\t\t=>> Insert\t: (press 1) " <<endl<< endl << "\t\t\t\t=>> View\t: (press 2) " 
+		 << endl <<endl<< "\t\t\t\t=>> Search\t: (press 3) " << endl<<endl << "\t\t\t\t=>> Delete\t: (press 4) " 
+		 <<endl<< endl << "\t\t\t\t=>> Edit\t: (press 5) " <<endl<< endl;
+	cin >> n;
+
+   
+
+	switch (n) {
+	case 1:
+		cout <<"\t\t\t\t----------" << endl;
+		cout <<"\t\t\t\tINPUT DATA" << endl;
+		cout <<"\t\t\t\t----------" << endl<<endl;
+		cout << "\t\t\t\tVehicle registration number : " << endl;
+		cout <<"\t\t\t\tchar part : ";
+		cin >> char_part;
+		cout <<"\t\t\t\tnum part  :";
+		cin >> num_part;
+		dll.insert(char_part, num_part);
+		break;
+	case 2:
+		cout <<"\t\t\t\t----" << endl;
+		cout <<"\t\t\t\tLIST"<<endl;
+		cout <<"\t\t\t\t----" << endl << endl;
+		dll.print();
+		break;
+	case 3:
+		cout <<"\t\t\t\t------" << endl;
+		cout <<"\t\t\t\tSEARCH"<<endl;
+		cout <<"\t\t\t\t------" << endl << endl;
+		dll.Search();
+		break;
+	case 4:
+		cout <<"\t\t\t\t------" << endl;
+		cout <<"\t\t\t\tDELETE" << endl;
+		cout <<"\t\t\t\t------" << endl << endl;
+		dll.deletedata();
+		break;
+	case 5:
+		cout <<"\t\t\t\t----" << endl;
+		cout <<"\t\t\t\tEDIT" << endl;
+		cout <<"\t\t\t\t----" << endl << endl;
+		dll.edit();
+		break;
+	default:
+		cout << " ";
+		break;
+	}
+	cout << "\t\t\t\tPress R for continue : ";
+	cin >> a;
+	if (a == 'R'||a=='r') {
+		goto top;
+	}else if(a == 'X' || a == 'x'){
+		cout<<endl<<"\t\t\t\tWelcome!"<<endl;
+	}
+
+
+
+
+
+
+
+	//dll.insert("ADH", 1000);
+	//dll.insert("FFJ", 4566);
+	//dll.insert("FFE", 3245);
+	//dll.insert("FFE", 5976);
+	//dll.insert("HGE", 4566);
+	//dll.insert("FFE", 5975);
+	//dll.insert("HGE", 4566);
+
+
+	return 0;
+}
+
